@@ -10,7 +10,7 @@
       },
       async run(app, noteHandle) {
         app.alert("Review notes");
-        await app.setSettings("LastDayReviewed", (/* @__PURE__ */ new Date()).toLocaleDateString());
+        await app.setSetting("LastDayReviewed", (/* @__PURE__ */ new Date()).toLocaleDateString());
       }
     }
     // There are several other entry points available, check them out here: https://www.amplenote.com/help/developing_amplenote_plugins#Actions
