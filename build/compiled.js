@@ -3,7 +3,7 @@
   var plugin = {
     dailyJotOption: {
       check(app, noteHandle) {
-        if (app.settings["LastDayReviewed"] === (/* @__PURE__ */ new Date()).toLocaleDateString()) {
+        if (app.settings["LastDayReviewed"] == (/* @__PURE__ */ new Date()).toLocaleDateString()) {
           return false;
         }
         return "Review notes";
