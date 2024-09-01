@@ -1,14 +1,16 @@
 (() => {
   // lib/plugin.js
   var plugin = {
-    // --------------------------------------------------------------------------------------
-    constants: {},
     dailyJotOption: {
       check(app, noteHandle) {
+        if (app.settings["LastDayReviewed"] === (/* @__PURE__ */ new Date()).toLocaleDateString()) {
+          return false;
+        }
         return "Review notes";
       },
-      run(app, noteHandle) {
+      async run(app, noteHandle) {
         app.alert("Review notes");
+        await app.setSettings("LastDayReviewed", (/* @__PURE__ */ new Date()).toLocaleDateString());
       }
     }
     // There are several other entry points available, check them out here: https://www.amplenote.com/help/developing_amplenote_plugins#Actions
