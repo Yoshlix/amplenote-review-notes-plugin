@@ -16,7 +16,9 @@
     async noteOption(app, noteUUID) {
       const markdown = await app.getNoteContent({ uuid: noteUUID });
       console.log(markdown);
-      app.alert("FRAGE");
+      const table = markdown.split("|");
+      console.log(table);
+      app.alert("FRAGE: " + table[0]);
     }
     // There are several other entry points available, check them out here: https://www.amplenote.com/help/developing_amplenote_plugins#Actions
     // You can delete any of the insertText/noteOptions/replaceText keys if you don't need them
