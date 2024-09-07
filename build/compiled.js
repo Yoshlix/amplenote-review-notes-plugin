@@ -16,7 +16,8 @@
     async noteOption(app, noteUUID) {
       const markdown = await app.getNoteContent({ uuid: noteUUID });
       console.log(markdown);
-      const table = markdown.split("|");
+      let table = markdown.split("|");
+      table.length = table.length - 10;
       console.log(table);
       app.alert("FRAGE: " + table[0]);
     }
